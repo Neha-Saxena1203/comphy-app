@@ -16,7 +16,7 @@ const PageHero = ({ title, product }) => {
 
 const Wrapper = styled.div`
   .main-con {
-    width: 100%;
+    /* width: 100%; */
     height: 9rem;
     background-color: hsl(22, 31%, 88%);
     display: flex;

@@ -101,6 +101,7 @@ const Wrapper = styled.section`
     border: none;
     border-bottom: 1px solid lightgray;
     margin-top: 12px;
+    display: block;
   }
 
   .sort-input {
@@ -114,6 +115,19 @@ const Wrapper = styled.section`
     text-transform: capitalize;
     font-size: 1rem;
     margin-right: 5px;
+  }
+
+  @media (max-width: 892px) {
+    /* grid-template-columns: auto auto 1fr 0.5fr; */
+    grid-template-columns: auto auto 0.1fr 1fr;
+    .line {
+      margin-left: 2rem;
+      width: 90%;
+      border: none;
+      border-bottom: 1px solid lightgray;
+      margin-top: 12px;
+      display: none;
+    }
   }
 `;
 export default Sort;

@@ -4,14 +4,16 @@ import styled from "styled-components";
 import { FaShoppingCart, FaUserPlus, FaUserMinus } from "react-icons/fa";
 import { useCartContext } from "../context/cart_context";
 import { useUserContext } from "../context/user_context";
+import { useProductsContext } from "../context/products_context";
 
 const CartButtons = () => {
   const { total_items, clear_cart } = useCartContext();
   const { loginWithRedirect, myUser, logout } = useUserContext();
+  const { closeSidebar } = useProductsContext();
 
   return (
     <Wrapper className="cart-btn-wrapper">
-      <Link to="/cart" className="cart-btn">
+      <Link to="/cart" className="cart-btn" onClick={closeSidebar}>
         Cart
         <span className="cart-container">
           <FaShoppingCart />
