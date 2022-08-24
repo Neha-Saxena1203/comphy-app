@@ -41,8 +41,8 @@ export const FilterProvider = ({ children }) => {
   }, [products]);
 
   useEffect(() => {
-    dispacth({ type: SORT_PRODUCTS });
     dispacth({ type: FILTER_PRODUCTS });
+    dispacth({ type: SORT_PRODUCTS });
   }, [products, state.sort, state.filters]);
 
   const setGridView = () => {
@@ -62,7 +62,7 @@ export const FilterProvider = ({ children }) => {
     let value = e.target.value;
     // console.log(e.target);
 
-    console.log(name, value);
+    // console.log(name, value);
 
     if (name === "category") {
       value = e.target.textContent;
@@ -79,7 +79,7 @@ export const FilterProvider = ({ children }) => {
     if (name === "shipping") {
       value = e.target.checked;
     }
-    console.log(name, value);
+    // console.log(name, value);
 
     dispacth({ type: UPDATE_FILTERS, payload: { name, value } });
   };

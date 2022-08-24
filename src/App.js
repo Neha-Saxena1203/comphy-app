@@ -10,6 +10,8 @@ import AboutPage from "./pages/AboutPage";
 import AuthWrapper from "./pages/AuthWrapper";
 import CheckoutPage from "./pages/CheckoutPage";
 import ProductsPage from "./pages/ProductsPage";
+import ErrorPage from "./pages/ErrorPage";
+import PrivateRoute from "./pages/PrivateRoute";
 
 function App() {
   return (
@@ -31,8 +33,11 @@ function App() {
             <ProductsPage />
           </Route>
           <Route exact path="/products/:id" children={<SingleProductPage />} />
-          <Route path="/checkout" exact>
+          <PrivateRoute path="/checkout" exact>
             <CheckoutPage />
+          </PrivateRoute>
+          <Route to="*">
+            <ErrorPage />
           </Route>
         </Switch>
         <Footer />
